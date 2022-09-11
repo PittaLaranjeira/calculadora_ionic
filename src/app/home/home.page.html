@@ -1,20 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      AppCalculadora
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form #formulario="ngForm">
+    <br>
+    <ion-item>
+      <ion-label>Número 1:</ion-label>
+      <ion-input name="n1" ngModel></ion-input>
+    </ion-item><br>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-item>
+      <ion-label>Número 2:</ion-label>
+      <ion-input name="n2" ngModel></ion-input>
+    </ion-item><br>
+
+    <ion-button color="warning" (click)="somar(formulario)">+</ion-button>
+    <ion-button color="warning" (click)="subtrair(formulario)">-</ion-button>
+    <ion-button color="warning" (click)="multiplicar(formulario)">*</ion-button>
+    <ion-button color="warning" (click)="dividir(formulario)">/</ion-button>
+    <br><br>
+    
+    <ion-item>
+      <ion-label>Resultado:</ion-label>
+      <ion-input value="{{resultado}}"></ion-input>
+    </ion-item>
+
+  </form>  
 </ion-content>
